@@ -101,10 +101,10 @@ extension SouthwestInFlightElement {
         withinUnitedStates: Bool?? = nil,
         estimatedTimeOfArrivalInDestinationTimeZoneValue: String?? = nil,
         latitudeValue: String?? = nil,
-        gspdVal: String?? = nil,
-        ttgc: String?? = nil,
-        distRemain: String?? = nil,
-        actime24: String?? = nil
+        groundSpeedMPHValue: String?? = nil,
+        timeToGroundContactHoursMinutesValue: String?? = nil,
+        distanceRemainingMilesValue: String?? = nil,
+        actualTime24InDestinationTimeZoneValue: String?? = nil
     ) -> SouthwestInFlightElement {
         return SouthwestInFlightElement(
             satelliteCommunicationLinkPortal: satelliteCommunicationLinkPortal ?? self.satelliteCommunicationLinkPortal,
