@@ -1,12 +1,12 @@
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
-//   let satcommStatus = try SatcommStatus(json)
+//   let satelliteCommunicationStatus = try SatcommStatus(json)
 //
 // To read values from URLs:
 //
-//   let task = URLSession.shared.satcommStatusTask(with: url) { satcommStatus, response, error in
-//     if let satcommStatus = satcommStatus {
+//   let task = URLSession.shared.satelliteCommunicationStatusTask(with: url) { satelliteCommunicationStatus, response, error in
+//     if let satelliteCommunicationStatus = satelliteCommunicationStatus {
 //       ...
 //     }
 //   }
@@ -15,15 +15,19 @@
 import Foundation
 
 // MARK: - SatcommStatus
-struct SatcommStatus: Codable {
-    let commlink, linkparams: String?
+struct SatelliteCommunicationStatus: Codable {
+    /// "inactive" / "active"
+    let commlink: String?
+    
+    /// "not-stale"
+    let linkparams: String?
 }
 
 // MARK: SatcommStatus convenience initializers and mutators
 
-extension SatcommStatus {
+extension SatelliteCommunicationStatus {
     init(data: Data) throws {
-        self = try newJSONDecoder().decode(SatcommStatus.self, from: data)
+        self = try newJSONDecoder().decode(SatelliteCommunicationStatus.self, from: data)
     }
 
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
@@ -40,8 +44,8 @@ extension SatcommStatus {
     func with(
         commlink: String?? = nil,
         linkparams: String?? = nil
-    ) -> SatcommStatus {
-        return SatcommStatus(
+    ) -> SatelliteCommunicationStatus {
+        return SatelliteCommunicationStatus(
             commlink: commlink ?? self.commlink,
             linkparams: linkparams ?? self.linkparams
         )

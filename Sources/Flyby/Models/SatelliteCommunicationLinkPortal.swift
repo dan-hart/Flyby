@@ -1,12 +1,12 @@
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
-//   let satCommlinkPortal = try SatCommlinkPortal(json)
+//   let satelliteCommunicationLinkPortal = try SatCommlinkPortal(json)
 //
 // To read values from URLs:
 //
-//   let task = URLSession.shared.satCommlinkPortalTask(with: url) { satCommlinkPortal, response, error in
-//     if let satCommlinkPortal = satCommlinkPortal {
+//   let task = URLSession.shared.satelliteCommunicationLinkPortalTask(with: url) { satelliteCommunicationLinkPortal, response, error in
+//     if let satelliteCommunicationLinkPortal = satelliteCommunicationLinkPortal {
 //       ...
 //     }
 //   }
@@ -16,7 +16,15 @@ import Foundation
 
 // MARK: - SatCommlinkPortal
 struct SatelliteCommunicationLinkPortal: Codable {
-    let status, time: String?
+    /// "conn_ok"
+    let status: String?
+    
+    /// "Sun May  1 18:35:10 2022"
+    /// This might be in AKDT?
+    /// AKDT — Alaska Daylight Time
+    /// -3 hours from actual time: 21:35:10
+    /// -4 hours from destination time
+    let time: String?
 }
 
 // MARK: SatCommlinkPortal convenience initializers and mutators
