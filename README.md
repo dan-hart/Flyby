@@ -1,3 +1,3 @@
 # Flyby
 
-A description of this package.
+Southwest Airlines in-flight API wrapper for Swift
